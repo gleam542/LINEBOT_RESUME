@@ -26,7 +26,7 @@ SECRET_KEY = '82*pbjzuus&wggl=rum$9$m*5v2vf3ihr8%ba(!eosk6x8t_yj'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['efbcc89e2002.ngrok.io']
+ALLOWED_HOSTS = ['linebot-resume.onrender.com']
 
 # Application definition
 

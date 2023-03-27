@@ -4,7 +4,7 @@ from linebot import LineBotApi
 from linebot.models import TextSendMessage, TemplateSendMessage, ConfirmTemplate, MessageTemplateAction, ButtonsTemplate, PostbackTemplateAction, URITemplateAction, CarouselTemplate, CarouselColumn, ImageCarouselTemplate, ImageCarouselColumn
 
 line_bot_api = LineBotApi('9Z4CJ8vVwvrCrprsDrD6dX4lTQGOMKkj2W8g2SnMWtwuSiG4nTBMXbDTd83vCgRPKno1P0kR6nnu5hZwThbhy6y2zox+oOZ/Ojvl9wFIr7edk8LepcNyjTIIWr+R9pW3r+gW7tcspNEWSzVNHLIqzwdB04t89/1O/w1cDnyilFU=')
-baseurl = 'https://47f238d4047a.ngrok.io/static/'
+baseurl = 'https://linebot-resume.onrender.com/static/'
 
 def sendButton(event):  #按鈕樣版
     try:
