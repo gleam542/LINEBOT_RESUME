@@ -1,2 +1,2 @@
-web: gunicorn xx.wsgi --log-file=-
+web: gunicorn x.wsgi --log-file=-
 worker: python manage.py runworker
