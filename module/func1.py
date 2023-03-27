@@ -9,7 +9,7 @@ from django.conf import settings
 from linebot import LineBotApi
 from linebot.models import VideoSendMessage,MessageAction,QuickReply,QuickReplyButton,LocationSendMessage,StickerSendMessage,TextSendMessage, ImageSendMessage, TemplateSendMessage, ConfirmTemplate, MessageTemplateAction, ButtonsTemplate, PostbackTemplateAction, URITemplateAction, CarouselTemplate, CarouselColumn, ImageCarouselTemplate, ImageCarouselColumn
 line_bot_api=LineBotApi('Zwj20l2P/UDOsTFuyTNe8SmuC7LUBg6Ngo0VB+0FhLFSqPWxNI8gE2Qkvm9UsWDEbBOvTy9RlQ0W7pS0ZLxd6neVmxyDFvXoySe8Jo/mVIUDHryvpUoztCtlcFR0PTw9benMvr777OLqqCRiKjWErwdB04t89/1O/w1cDnyilFU=')
-baseurl = 'https://efbcc89e2002.ngrok.io/static/'
+baseurl = 'https://linebot-resume.onrender.com/static/'
 def sendButton(event):
     try:
         message=TemplateSendMessage(
@@ -36,14 +36,29 @@ def sendButton(event):
 def sendImage(event):  #傳送圖片
     try:
         message = [ImageSendMessage(
-            original_content_url = "https://i.imgur.com/9Mprx5d.jpg",
-            preview_image_url = "https://i.imgur.com/9Mprx5d.jpg"),
+            original_content_url = "https://i.imgur.com/FKehB23.jpg",
+            preview_image_url = "https://i.imgur.com/FKehB23.jpg"),
             ImageSendMessage(
-            original_content_url = "https://i.imgur.com/KZ9SUOI.jpg",
-            preview_image_url = "https://i.imgur.com/KZ9SUOI.jpg"),
+            original_content_url = "https://i.imgur.com/3yCKd4p.jpg",
+            preview_image_url = "https://i.imgur.com/3yCKd4p.jpg"),
             ImageSendMessage(
-            original_content_url = "https://i.imgur.com/pbqebHD.jpg",
-            preview_image_url = "https://i.imgur.com/pbqebHD.jpg")]
+            original_content_url = "https://i.imgur.com/LuhjgBO.jpg",
+            preview_image_url = "https://i.imgur.com/LuhjgBO.jpg"),
+            ImageSendMessage(
+            original_content_url = "https://i.imgur.com/jKnUFKR.jpg",
+            preview_image_url = "https://i.imgur.com/jKnUFKR.jpg"),
+            ImageSendMessage(
+            original_content_url = "https://i.imgur.com/9emzvHH.jpg",
+            preview_image_url = "https://i.imgur.com/9emzvHH.jpg"),
+            ImageSendMessage(
+            original_content_url = "https://i.imgur.com/TLkhOO7.jpg",
+            preview_image_url = "https://i.imgur.com/TLkhOO7.jpg"),
+            ImageSendMessage(
+            original_content_url = "https://i.imgur.com/YffnSaH.jpg",
+            preview_image_url = "https://i.imgur.com/YffnSaH.jpg"),
+            ImageSendMessage(
+            original_content_url = "https://i.imgur.com/tGIbrLw.jpg",
+            preview_image_url = "https://i.imgur.com/tGIbrLw.jpg"),]
         
         line_bot_api.reply_message(event.reply_token,message)
     except:
@@ -56,9 +71,6 @@ def sendImage1(event):  #傳送圖片
             original_content_url=baseurl + 'ibon.mp4',  #影片檔置於static資料夾
             preview_image_url=baseurl + 'ibon.jpg'
             ),
-            #        ImageSendMessage(
-            # original_content_url = "https://i.imgur.com/80tOkyT.gif",
-            # preview_image_url = "https://i.imgur.com/80tOkyT.gif"),
             TextSendMessage(
             text='觀看其他作品請點下列選項',
             quick_reply=QuickReply(
@@ -88,9 +100,6 @@ def sendImage2(event):  #傳送圖片
             original_content_url=baseurl + 'Foodpanda.mp4',  #影片檔置於static資料夾
             preview_image_url=baseurl + 'Foodpanda.jpg'
             ),
-            # ImageSendMessage(
-            # original_content_url = "https://i.imgur.com/oGCq2na.gif",
-            # preview_image_url = "https://i.imgur.com/oGCq2na.gif"),
             TextSendMessage(
             text='觀看其他作品請點下列選項',
             quick_reply=QuickReply(
@@ -114,41 +123,6 @@ def sendImage2(event):  #傳送圖片
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 def sendImage3(event):
     try:
-      #   message=TemplateSendMessage(
-      #       alt_text='圖片轉盤樣板',
-      #       template=ImageCarouselTemplate(
-      #           columns=[
-      #               ImageCarouselColumn(
-      #                   image_url='https://i.imgur.com/Me8PFSe.jpg',
-      #                   action=PostbackTemplateAction(
-      #                       label='python程式語言證照',
-      #                       data='action=證照&item=1'
-      #                   )
-      #               ),
- 					# ImageCarouselColumn(
-      #                   image_url='https://i.imgur.com/jaESwoo.jpg',
-      #                   action=PostbackTemplateAction(
-      #                       label='python爬蟲技術證照',
-      #                       data='action=證照&item=2'
-      #                   )
-      #               ),
-      #               # ImageCarouselColumn(
-      #               #     image_url='https://i.imgur.com/JpH4Oh8.jpg',
-      #               #     action=PostbackTemplateAction(
-      #               #         label='學習python的結訓證明',
-      #               #         data='action=證照&item=3'
-      #               #     )
-      #               # ),
-      #               ImageCarouselColumn(
-      #                   image_url='https://i.imgur.com/umvK53H.jpg',
-      #                   action=PostbackTemplateAction(
-      #                       label='大學畢業證書',
-      #                       data='action=證照&item=4'
-      #                   )
-      #               ),
-      #           ]
-      #       )
-      #   )
         message=[TextSendMessage(text='以下是python程式語言證照與python爬蟲技術證照'),
                   ImageSendMessage(
                       original_content_url='https://i.imgur.com/Me8PFSe.jpg',
@@ -156,10 +130,6 @@ def sendImage3(event):
                    ImageSendMessage(
                        original_content_url='https://i.imgur.com/jaESwoo.jpg',
                        preview_image_url='https://i.imgur.com/jaESwoo.jpg'),
-                    # TextSendMessage(text='以下是本人學習python的結訓證明'),
-                    # ImageSendMessage(
-                    #      original_content_url='https://i.imgur.com/JpH4Oh8.jpg',
-                    #      preview_image_url='https://i.imgur.com/JpH4Oh8.jpg'),
                     TextSendMessage(text='以下是本人的大學畢業證書'),
                     ImageSendMessage(
                         original_content_url='https://i.imgur.com/umvK53H.jpg',
@@ -287,8 +257,8 @@ def sendBack_buy(event, backdata):  #處理Postback
 def sendMulti(event):  #多項傳送
     try:
         message = [  #串列
-            TextSendMessage(  #傳送y文字
-                text = "薪資大概至少3萬元/月"),
+            TextSendMessage(  #傳送文字
+                text = "薪資大概至少5萬元/月"),
             StickerSendMessage(  #傳送貼圖
                 package_id='1',  
                 sticker_id='2'
@@ -300,7 +270,7 @@ def sendMulti(event):  #多項傳送
 def sendMulti1(event):  #多項傳送
     try:
         message = [  #串列
-            TextSendMessage(  #傳送y文字
+            TextSendMessage(  #傳送文字
                 text = "理想職稱是軟體工程師"),
             ImageSendMessage(
             original_content_url = "https://i.imgur.com/8XWg85f.jpg",
@@ -362,7 +332,7 @@ def sendImgCarousel(event):
                         )
                     ),
  					ImageCarouselColumn(
-                        image_url='https://i.imgur.com/C5fHd5F.jpg',
+                        image_url='https://i.imgur.com/dlJwk2t.jpg',
                         action=PostbackTemplateAction(
                             label='作品',
                             text='我要看作品',
