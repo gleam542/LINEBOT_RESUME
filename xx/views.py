@@ -39,7 +39,7 @@ def callback(request):
                 backdata = dict(parse_qsl(event.postback.data))  #取得Postback資料
                 if backdata.get('action') =='履歷':
                     if backdata.get('item')=='1':
-                        func1.sendImage(event)
+                        func1.sendImgCarousel_allresume(event)
                     elif backdata.get('item') == '2':
                         func1.sendMulti(event)
                     elif backdata.get('item') == '3':

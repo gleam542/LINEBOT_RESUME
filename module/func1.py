@@ -7,7 +7,7 @@ Created on Fri Sep 11 03:58:14 2020
 
 from django.conf import settings
 from linebot import LineBotApi
-from linebot.models import VideoSendMessage,MessageAction,QuickReply,QuickReplyButton,LocationSendMessage,StickerSendMessage,TextSendMessage, ImageSendMessage, TemplateSendMessage, ConfirmTemplate, MessageTemplateAction, ButtonsTemplate, PostbackTemplateAction, URITemplateAction, CarouselTemplate, CarouselColumn, ImageCarouselTemplate, ImageCarouselColumn
+from linebot.models import URIAction,VideoSendMessage,MessageAction,QuickReply,QuickReplyButton,LocationSendMessage,StickerSendMessage,TextSendMessage, ImageSendMessage, TemplateSendMessage, ConfirmTemplate, MessageTemplateAction, ButtonsTemplate, PostbackTemplateAction, URITemplateAction, CarouselTemplate, CarouselColumn, ImageCarouselTemplate, ImageCarouselColumn
 line_bot_api=LineBotApi('Zwj20l2P/UDOsTFuyTNe8SmuC7LUBg6Ngo0VB+0FhLFSqPWxNI8gE2Qkvm9UsWDEbBOvTy9RlQ0W7pS0ZLxd6neVmxyDFvXoySe8Jo/mVIUDHryvpUoztCtlcFR0PTw9benMvr777OLqqCRiKjWErwdB04t89/1O/w1cDnyilFU=')
 baseurl = 'https://linebot-resume.onrender.com/static/'
 def sendButton(event):
@@ -33,36 +33,6 @@ def sendButton(event):
         line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='error'))
-def sendImage(event):  #傳送圖片
-    try:
-        message = [ImageSendMessage(
-            original_content_url = "https://i.imgur.com/FKehB23.jpg",
-            preview_image_url = "https://i.imgur.com/FKehB23.jpg"),
-            ImageSendMessage(
-            original_content_url = "https://i.imgur.com/3yCKd4p.jpg",
-            preview_image_url = "https://i.imgur.com/3yCKd4p.jpg"),
-            ImageSendMessage(
-            original_content_url = "https://i.imgur.com/LuhjgBO.jpg",
-            preview_image_url = "https://i.imgur.com/LuhjgBO.jpg"),
-            ImageSendMessage(
-            original_content_url = "https://i.imgur.com/jKnUFKR.jpg",
-            preview_image_url = "https://i.imgur.com/jKnUFKR.jpg"),
-            ImageSendMessage(
-            original_content_url = "https://i.imgur.com/9emzvHH.jpg",
-            preview_image_url = "https://i.imgur.com/9emzvHH.jpg"),
-            ImageSendMessage(
-            original_content_url = "https://i.imgur.com/TLkhOO7.jpg",
-            preview_image_url = "https://i.imgur.com/TLkhOO7.jpg"),
-            ImageSendMessage(
-            original_content_url = "https://i.imgur.com/YffnSaH.jpg",
-            preview_image_url = "https://i.imgur.com/YffnSaH.jpg"),
-            ImageSendMessage(
-            original_content_url = "https://i.imgur.com/tGIbrLw.jpg",
-            preview_image_url = "https://i.imgur.com/tGIbrLw.jpg"),]
-        
-        line_bot_api.reply_message(event.reply_token,message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 def sendImage1(event):  #傳送圖片
     try:
         message = [TextSendMessage(  #傳送y文字
@@ -353,6 +323,84 @@ def sendBack_sell(event, backdata):  #處理Postback
         line_bot_api.reply_message(event.reply_token, message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
-    
-    
-    
+
+def sendImgCarousel_allresume(event):
+    try:
+        #履歷图片
+        image_urls = [
+                    "https://i.imgur.com/FKehB23.jpg"
+                     ,"https://i.imgur.com/3yCKd4p.jpg"
+                     ,"https://i.imgur.com/LuhjgBO.jpg"
+                     ,"https://i.imgur.com/jKnUFKR.jpg"
+                     ,"https://i.imgur.com/9emzvHH.jpg"
+                     ,"https://i.imgur.com/TLkhOO7.jpg"
+                     ,"https://i.imgur.com/YffnSaH.jpg"
+                     ,"https://i.imgur.com/tGIbrLw.jpg"
+                 
+                 ]
+        message = [TextSendMessage(text='請左右滑動圖片'),TemplateSendMessage(
+            alt_text='完整履歷',
+            template=ImageCarouselTemplate(
+                columns=[
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/FKehB23.jpg',
+                        action=URIAction(
+                            label='點我查看完整圖片',
+                            uri='https://i.imgur.com/FKehB23.jpg'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/3yCKd4p.jpg',
+                        action=URIAction(
+                            label='點我查看完整圖片',
+                            uri='https://i.imgur.com/3yCKd4p.jpg'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/LuhjgBO.jpg',
+                        action=URIAction(
+                            label='點我查看完整圖片',
+                            uri='https://i.imgur.com/LuhjgBO.jpg'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/jKnUFKR.jpg',
+                        action=URIAction(
+                            label='點我查看完整圖片',
+                            uri='https://i.imgur.com/jKnUFKR.jpg'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/9emzvHH.jpg',
+                        action=URIAction(
+                            label='點我查看完整圖片',
+                            uri='https://i.imgur.com/9emzvHH.jpg'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/TLkhOO7.jpg',
+                        action=URIAction(
+                            label='點我查看完整圖片',
+                            uri='https://i.imgur.com/TLkhOO7.jpg'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/YffnSaH.jpg',
+                        action=URIAction(
+                            label='點我查看完整圖片',
+                            uri='https://i.imgur.com/YffnSaH.jpg'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/tGIbrLw.jpg',
+                        action=URIAction(
+                            label='點我查看完整圖片',
+                            uri='https://i.imgur.com/tGIbrLw.jpg'
+                        )
+                    ),
+                ]
+            )
+        )]
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
